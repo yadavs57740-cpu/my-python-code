@@ -15,20 +15,23 @@ print(df)
 
 
 #csv
-import pandas as pd
-df=pd.read_csv("file1.csv")
-print(df)
+# import pandas as pd
+# df=pd.read_csv("file1.csv")
+# print(df)
 
-#json
-import pandas as pd
-df=pd.read_json("file1.json")
-print(df)
+# #json
+# import pandas as pd
+# df=pd.read_json("file1.json")
+# print(df)
 
 #excel
 import pandas as pd
 df=pd.read_excel("file1.xlsx")
 print(df)
 
+#excel to json
+df.to_json("file2.json")
+df.to_csv("file2.csv")
 
 
 # day 14
@@ -62,10 +65,16 @@ d = {
 df = pd.DataFrame(data=d)
 print(df)
      
-
-
+# csv file import from github
 import pandas as pd
-url = "https://raw.githubusercontent.com/rajendra0968jangid/Ds-Arya/main/file2.json"
+url = "https://github.com/yadavs57740-cpu/my-python-code/blob/main/file3.csv"
+df = pd.read_csv(url)
+df
+
+
+# json file import from github
+import pandas as pd
+url = "https://github.com/yadavs57740-cpu/my-python-code/blob/main/file3.json"
 df = pd.read_json(url)
 df.rename(columns={"marks":"student_marks"},inplace=True)
 df
